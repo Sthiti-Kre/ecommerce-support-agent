@@ -1,0 +1,44 @@
+# Configuration for the ECommerce Support Agent
+
+# LLM Settings
+llm:
+  model_name: "gemini-1.5-pro"  # Or any other suitable model
+  temperature: 0.2
+  max_tokens: 500
+  api_key: "YOUR_API_KEY" # Replace with your actual API key
+
+# Security Settings
+security:
+  auth_type: "API_KEY"  # Options: "NONE", "API_KEY", "OAUTH"
+  api_key: "YOUR_API_KEY" # Replace with your actual API key
+  allowed_origins: ["*"] # Replace with your actual allowed origins
+
+# Error Handling
+error_handling:
+  retry_attempts: 3
+  retry_delay: 2  # seconds
+  circuit_breaker_threshold: 5
+  circuit_breaker_timeout: 60 # seconds
+
+# Data Sources (Example - replace with actual details)
+data_sources:
+  order_database:
+    type: "POSTGRES"
+    connection_string: "postgresql://user:password@host:port/database"
+  product_catalog:
+    type: "CSV"
+    file_path: "data/datasets/products.csv"
+  shipping_api:
+    url: "https://api.shippingprovider.com/v1"
+
+# Agent Behavior
+agent_behavior:
+  greeting: "Hello! How can I help you today?"
+  farewell: "Thank you for contacting support. Have a great day!"
+  forbidden_topics: ["payment", "security", "technical"]
+
+# Observability
+observability:
+  logging_level: "INFO"
+  metrics_enabled: True
+  tracing_enabled: False
