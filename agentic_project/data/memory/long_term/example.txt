@@ -1,0 +1,1 @@
+This is an example of long-term memory.  It could contain summaries of past conversations or important user preferences.
