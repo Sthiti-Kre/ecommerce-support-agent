@@ -1,0 +1,4 @@
+PyYAML
+requests
+google-cloud-aiplatform
+vertexai
